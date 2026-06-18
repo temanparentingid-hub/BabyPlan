@@ -9,10 +9,10 @@ FIREBASE_PROJECT_ID = "steel-market-8jhcx"
 # KV Namespace bindings
 [[kv_namespaces]]
 binding = "BABYPLAN_KV"
-id = "YOUR_KV_NAMESPACE_ID_HERE"
+id = "507bfaf0b4da498b94759e7b2e253fc7"
 
 # D1 Database bindings
 [[d1_databases]]
 binding = "DB"
 database_name = "babyplan-db"
-database_id = "YOUR_D1_DATABASE_ID_HERE"
+database_id = "c3d1494e-8bca-4a6d-a31d-5db283013beb"

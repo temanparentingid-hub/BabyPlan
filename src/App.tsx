@@ -733,44 +733,6 @@ export default function App() {
     } catch (e) {
       console.error("Gagal mereset data:", e);
     }
-  };
-    } catch (e) {
-      handleFirestoreError(e, OperationType.UPDATE, `hospitalComparisons/${id}`);
-    }
-  };
-
-  const handleDeleteHospital = async (id: string) => {
-    if (isDemo || !user) {
-      setHospitalComparisons(prev => prev.filter(h => h.id !== id));
-      return;
-    }
-    try {
-      await api.deleteHospital(id);
-      await loadAllData();
-    } catch (e) {
-      console.error("Gagal hapus RS:", e);
-    }
-  };
-
-  // I. Pure reset all collections
-  const handleResetAllData = async () => {
-    if (isDemo || !user) return;
-    try {
-      await api.saveProfile({
-        namaMoms: "",
-        namaDads: "",
-        namaBayi: "",
-        hpht: "",
-        hpl: "",
-        pilihanPerhitungan: "HPHT",
-        targetBudget: 0,
-        mataUang: "IDR"
-      });
-      await loadAllData();
-    } catch (e) {
-      console.error("Gagal mereset data:", e);
-    }
-  };
 
   const handleLogout = async () => {
     try {
