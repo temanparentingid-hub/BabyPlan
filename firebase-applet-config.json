@@ -1,7 +1,7 @@
 {
   "projectId": "babyplan-auth",
   "appId": "1:754162860434:web:1cb4517b2e90f6cd15c14b",
-  "apiKey": "AIzaSyBPmUbREhwQdZAkcFX03RHN0j2ImkXgfME",
+  "apiKey": "AIzaSyBPmUbREhwQdZAkcFX03RHN0j2ImkXgFME",
   "authDomain": "babyplan-auth.firebaseapp.com",
   "storageBucket": "babyplan-auth.firebasestorage.app",
   "messagingSenderId": "754162860434",
