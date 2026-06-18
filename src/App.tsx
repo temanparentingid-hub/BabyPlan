@@ -733,6 +733,7 @@ export default function App() {
     } catch (e) {
       console.error("Gagal mereset data:", e);
     }
+  };
 
   const handleLogout = async () => {
     try {
