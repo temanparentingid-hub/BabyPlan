@@ -10,21 +10,21 @@ import {
 } from "./types";
 
 // Scenario: Moms Clarissa & Dads Ardi, expecting baby "Aisha"
-// HPHT: Jan 15, 2026 (approx 21 weeks pregnancy, Trimester 2, Fruit: Carrot / Pomegranate)
-// HPL: Oct 22, 2026 (approx 132 days remaining)
+// HPHT: Mar 16, 2026 (approx 13 weeks 3 days pregnancy, Trimester 2, Fruit: Lemon)
+// HPL: Dec 21, 2026
 
 export const mockProfile: PregnancyProfile = {
   userId: "preview_user_id",
   namaMoms: "Moms Clarissa",
   namaDads: "Dads Ardi",
   namaBayi: "Dek Aisha",
-  hpht: "2026-01-15",
-  hpl: "2026-10-22",
+  hpht: "2026-03-16",
+  hpl: "2026-12-21",
   pilihanPerhitungan: "HPHT",
   targetBudget: 45000000, // Rp 45.000.000
   mataUang: "Rp (Rupiah)",
-  createdAt: "2026-02-01T08:00:00Z",
-  updatedAt: "2026-02-01T08:00:00Z"
+  createdAt: "2026-04-02T08:00:00Z",
+  updatedAt: "2026-04-02T08:00:00Z"
 };
 
 export const mockBudgetItems: BudgetItem[] = [
@@ -32,7 +32,7 @@ export const mockBudgetItems: BudgetItem[] = [
   {
     id: "b1",
     userId: "preview_user_id",
-    tanggal: "2026-02-12",
+    tanggal: "2026-04-13",
     nama: "Pemeriksaan USG Pertama & Vitamin",
     kategori: "Medis & Kontrol",
     subkategori: "Kontrol Bulanan Dokter",
@@ -42,13 +42,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Kartu Debit",
     catatan: "Klinik Sehati. Dokter Amanda, SpOG. Vitamin asam folat untuk 1 bulan.",
-    createdAt: "2026-02-12T10:00:00Z",
-    updatedAt: "2026-02-12T10:00:00Z"
+    createdAt: "2026-04-13T10:00:00Z",
+    updatedAt: "2026-04-13T10:00:00Z"
   },
   {
     id: "b2",
     userId: "preview_user_id",
-    tanggal: "2026-03-15",
+    tanggal: "2026-05-14",
     nama: "Kontrol Rutin & Vitamin Trimester 1",
     kategori: "Medis & Kontrol",
     subkategori: "Kontrol Bulanan Dokter",
@@ -58,13 +58,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Transfer Bank",
     catatan: "Kontrol trimester pertama lancar, janin berkembang baik.",
-    createdAt: "2026-03-15T11:00:00Z",
-    updatedAt: "2026-03-15T11:00:00Z"
+    createdAt: "2026-05-14T11:00:00Z",
+    updatedAt: "2026-05-14T11:00:00Z"
   },
   {
     id: "b3",
     userId: "preview_user_id",
-    tanggal: "2026-04-18",
+    tanggal: "2026-06-17",
     nama: "Cek Darah Lengkap & Urine Lab",
     kategori: "Medis & Kontrol",
     subkategori: "Laboratorium",
@@ -74,13 +74,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Kartu Kredit",
     catatan: "Untuk skrining diabetes gestasional dan kadar zat besi. Hasil normal.",
-    createdAt: "2026-04-18T09:00:00Z",
-    updatedAt: "2026-04-18T09:00:00Z"
+    createdAt: "2026-06-17T09:00:00Z",
+    updatedAt: "2026-06-17T09:00:00Z"
   },
   {
     id: "b4",
     userId: "preview_user_id",
-    tanggal: "2026-05-15",
+    tanggal: "2026-07-14",
     nama: "Kontrol Dokter Trimester 2 & Kalsium",
     kategori: "Medis & Kontrol",
     subkategori: "Kontrol Bulanan Dokter",
@@ -90,13 +90,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Cash",
     catatan: "Dokter memberi resep tambahan kalsium dan DHA.",
-    createdAt: "2026-05-15T10:00:00Z",
-    updatedAt: "2026-05-15T10:00:00Z"
+    createdAt: "2026-07-14T10:00:00Z",
+    updatedAt: "2026-07-14T10:00:00Z"
   },
   {
     id: "b4-nipt",
     userId: "preview_user_id",
-    tanggal: "2026-04-20",
+    tanggal: "2026-06-19",
     nama: "Tes Genetik Janin NIPT Premium",
     kategori: "Medis & Kontrol",
     subkategori: "Laboratorium",
@@ -106,13 +106,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Kartu Kredit",
     catatan: "Deteksi kromosom dan kesehatan DNA. Hasil puji tuhan normal & berjenis kelamin perempuan.",
-    createdAt: "2026-04-20T09:00:00Z",
-    updatedAt: "2026-04-20T09:00:00Z"
+    createdAt: "2026-06-19T09:00:00Z",
+    updatedAt: "2026-06-19T09:00:00Z"
   },
   {
     id: "b_yoga",
     userId: "preview_user_id",
-    tanggal: "2026-05-25",
+    tanggal: "2026-07-24",
     nama: "Sesi Prenatal Yoga di Studio Bumi",
     kategori: "Medis & Kontrol",
     subkategori: "Olahraga/Kelas Hamil",
@@ -122,13 +122,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Qris",
     catatan: "Paket 4 sesi latihan pernapasan dan peregangan panggul.",
-    createdAt: "2026-05-25T14:00:00Z",
-    updatedAt: "2026-05-25T14:00:00Z"
+    createdAt: "2026-07-24T14:00:00Z",
+    updatedAt: "2026-07-24T14:00:00Z"
   },
   {
     id: "b_kontrol3",
     userId: "preview_user_id",
-    tanggal: "2026-08-20",
+    tanggal: "2026-10-19",
     nama: "Rencana Kontrol Rutin Trimester 3",
     kategori: "Medis & Kontrol",
     subkategori: "Kontrol Bulanan Dokter",
@@ -138,15 +138,15 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Belum Lunas",
     metode: "Belum Ditentukan",
     catatan: "USG akhir trimester 3 untuk melihat posisi kepala bayi dan plasenta.",
-    createdAt: "2026-06-01T08:00:00Z",
-    updatedAt: "2026-06-01T08:00:00Z"
+    createdAt: "2026-07-31T08:00:00Z",
+    updatedAt: "2026-07-31T08:00:00Z"
   },
 
   // PERLENGKAPAN BAYI (Kategori: Perlengkapan Bayi)
   {
     id: "b5",
     userId: "preview_user_id",
-    tanggal: "2026-06-05",
+    tanggal: "2026-08-04",
     nama: "Box Bayi Kayu Minimalis (Baby Crib)",
     kategori: "Perlengkapan Bayi",
     subkategori: "Furnitur Kamar",
@@ -156,13 +156,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Transfer Bank",
     catatan: "Beli merek lokal kayu solid mahoni, sudah termasuk kasur busa bebas alergi.",
-    createdAt: "2026-06-05T14:00:00Z",
-    updatedAt: "2026-06-05T14:00:00Z"
+    createdAt: "2026-08-04T14:00:00Z",
+    updatedAt: "2026-08-04T14:00:00Z"
   },
   {
     id: "b_stroller",
     userId: "preview_user_id",
-    tanggal: "2026-06-10",
+    tanggal: "2026-08-09",
     nama: "Stroller Cabin-size Ringan",
     kategori: "Perlengkapan Bayi",
     subkategori: "Mobilitas Bayi",
@@ -172,13 +172,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Debit",
     catatan: "Mudah dilipat satu tangan, kokoh, dan aman.",
-    createdAt: "2026-06-10T11:00:00Z",
-    updatedAt: "2026-06-10T11:00:00Z"
+    createdAt: "2026-08-09T11:00:00Z",
+    updatedAt: "2026-08-09T11:00:00Z"
   },
   {
     id: "b6",
     userId: "preview_user_id",
-    tanggal: "2026-08-10",
+    tanggal: "2026-10-09",
     nama: "Paket Baju Bayi New Born (Katun Organik)",
     kategori: "Perlengkapan Bayi",
     subkategori: "Pakaian & Sandang",
@@ -188,13 +188,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Belum Lunas",
     metode: "Belum Ditentukan",
     catatan: "Beli isi 12 pasang baju dan celana katun adem pasca usia kehamilan 30 minggu.",
-    createdAt: "2026-05-10T12:00:00Z",
-    updatedAt: "2026-05-10T12:00:00Z"
+    createdAt: "2026-07-09T12:00:00Z",
+    updatedAt: "2026-07-09T12:00:00Z"
   },
   {
     id: "b_skincare",
     userId: "preview_user_id",
-    tanggal: "2026-06-02",
+    tanggal: "2026-08-01",
     nama: "Paket Skincare & Sabun Bayi Sensitive",
     kategori: "Perlengkapan Bayi",
     subkategori: "Perawatan Kulit",
@@ -204,15 +204,15 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Qris",
     catatan: "Paket Mustela newborn: diaper cream, hair lotion, gentle bath gel.",
-    createdAt: "2026-06-02T10:00:00Z",
-    updatedAt: "2026-06-02T10:00:00Z"
+    createdAt: "2026-08-01T10:00:00Z",
+    updatedAt: "2026-08-01T10:00:00Z"
   },
 
   // KEBUTUHAN IBU (Kategori: Kebutuhan Ibu)
   {
     id: "b_pillow",
     userId: "preview_user_id",
-    tanggal: "2026-03-20",
+    tanggal: "2026-05-19",
     nama: "Maternity Pillow (Bantal Ibu Hamil)",
     kategori: "Kebutuhan Ibu",
     subkategori: "Kamar & Istirahat",
@@ -222,13 +222,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Cash",
     catatan: "Bentuk C-shape sangat menolong posisi tidur miring kiri Moms.",
-    createdAt: "2026-03-20T11:00:00Z",
-    updatedAt: "2026-03-20T11:00:00Z"
+    createdAt: "2026-05-19T11:00:00Z",
+    updatedAt: "2026-05-19T11:00:00Z"
   },
   {
     id: "b_daster",
     userId: "preview_user_id",
-    tanggal: "2026-05-30",
+    tanggal: "2026-07-29",
     nama: "Setel Daster & Kaos Menyusui (Busui)",
     kategori: "Kebutuhan Ibu",
     subkategori: "Pakaian Ibu",
@@ -238,13 +238,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Qris",
     catatan: "Beli 4 buah pakaian berkancing di depan untuk kemudahan pumping nanti.",
-    createdAt: "2026-05-30T10:00:00Z",
-    updatedAt: "2026-05-30T10:00:00Z"
+    createdAt: "2026-07-29T10:00:00Z",
+    updatedAt: "2026-07-29T10:00:00Z"
   },
   {
     id: "b_pompa",
     userId: "preview_user_id",
-    tanggal: "2026-07-15",
+    tanggal: "2026-09-13",
     nama: "Handsfree Breastpump Double Elektrik",
     kategori: "Kebutuhan Ibu",
     subkategori: "Peralatan Menyusui",
@@ -254,15 +254,15 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Belum Lunas",
     metode: "Belum Ditentukan",
     catatan: "Gabag Kolibri Max untuk persiapan pumping ASI saat Moms kembali bekerja.",
-    createdAt: "2026-06-01T08:00:00Z",
-    updatedAt: "2026-06-01T08:00:00Z"
+    createdAt: "2026-07-31T08:00:00Z",
+    updatedAt: "2026-07-31T08:00:00Z"
   },
 
   // BIAYA PERSALINAN (Kategori: Biaya Melahirkan & RS)
   {
     id: "b_caesar",
     userId: "preview_user_id",
-    tanggal: "2026-10-22",
+    tanggal: "2026-12-21",
     nama: "Dana Utama Persalinan Caesar ERACS VIP RSIA",
     kategori: "Biaya Melahirkan & RS",
     subkategori: "Tindakan Persalinan",
@@ -272,13 +272,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Belum Lunas",
     metode: "Belum Ditentukan",
     catatan: "Estimasi biaya di RSIA Bunda Menteng. Sedang ditabung berkala gratis asuransi.",
-    createdAt: "2026-02-01T10:00:00Z",
-    updatedAt: "2026-02-01T10:00:00Z"
+    createdAt: "2026-04-02T10:00:00Z",
+    updatedAt: "2026-04-02T10:00:00Z"
   },
   {
     id: "b_booking_rs",
     userId: "preview_user_id",
-    tanggal: "2026-06-01",
+    tanggal: "2026-07-31",
     nama: "Deposit Booking Kamar Bersalin & Administrasi",
     kategori: "Biaya Melahirkan & RS",
     subkategori: "Tindakan Persalinan",
@@ -288,15 +288,15 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Transfer Bank",
     catatan: "Sudah dipesan agar reservasi kelas VIP aman dan masuk dalam slot promonya.",
-    createdAt: "2026-06-01T10:00:00Z",
-    updatedAt: "2026-06-01T10:00:00Z"
+    createdAt: "2026-07-31T10:00:00Z",
+    updatedAt: "2026-07-31T10:00:00Z"
   },
 
   // ACARA & LAIN-LAIN (Kategori: Acara & Syukuran)
   {
     id: "b_mitoni",
     userId: "preview_user_id",
-    tanggal: "2026-08-15",
+    tanggal: "2026-10-14",
     nama: "Upacara Adat Mitoni (7 Bulanan Kehamilan)",
     kategori: "Acara & Syukuran",
     subkategori: "Upacara Adat/Syukuran",
@@ -306,13 +306,13 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Belum Lunas",
     metode: "Belum Ditentukan",
     catatan: "Acara doa syukuran keluarga inti, tumpeng pusaka, dan hampers besek kerabat terdekat.",
-    createdAt: "2026-06-01T10:00:00Z",
-    updatedAt: "2026-06-01T10:00:00Z"
+    createdAt: "2026-07-31T10:00:00Z",
+    updatedAt: "2026-07-31T10:00:00Z"
   },
   {
     id: "b_maternity_photo",
     userId: "preview_user_id",
-    tanggal: "2026-06-11",
+    tanggal: "2026-08-10",
     nama: "Sesi Foto Kehamilan (Maternity Photoshoot)",
     kategori: "Acara & Syukuran",
     subkategori: "Dokumentasi",
@@ -322,8 +322,8 @@ export const mockBudgetItems: BudgetItem[] = [
     statusPembayaran: "Lunas",
     metode: "Transfer Bank",
     catatan: "Sesi foto manis bersama Dads Ardi di studio minimalis.",
-    createdAt: "2026-06-11T12:00:00Z",
-    updatedAt: "2026-06-11T12:00:00Z"
+    createdAt: "2026-08-10T12:00:00Z",
+    updatedAt: "2026-08-10T12:00:00Z"
   }
 ];
 
@@ -341,8 +341,8 @@ export const mockWishlistItems: WishlistItem[] = [
     status: "Sudah Dibeli",
     prioritas: "Sedang",
     catatan: "Banyak direkomendasikan karena praktis daripada merebus air manual secara konvensional.",
-    createdAt: "2026-05-02T10:00:00Z",
-    updatedAt: "2026-06-12T10:00:00Z"
+    createdAt: "2026-07-01T10:00:00Z",
+    updatedAt: "2026-08-11T10:00:00Z"
   },
   {
     id: "w2",
@@ -357,8 +357,8 @@ export const mockWishlistItems: WishlistItem[] = [
     status: "Belum Dibeli",
     prioritas: "Tinggi",
     catatan: "Sangat direkomendasikan untuk mencegah alergi kulit pada newborn baby.",
-    createdAt: "2026-05-12T11:00:00Z",
-    updatedAt: "2026-05-12T11:00:00Z"
+    createdAt: "2026-07-11T11:00:00Z",
+    updatedAt: "2026-07-11T11:00:00Z"
   },
   {
     id: "w3",
@@ -373,8 +373,8 @@ export const mockWishlistItems: WishlistItem[] = [
     status: "Belum Dibeli",
     prioritas: "Sedang",
     catatan: "Sangat penting agar sirkulasi udara kamar bayi bebas debu, virus, dan bau.",
-    createdAt: "2026-05-20T09:00:00Z",
-    updatedAt: "2026-05-20T09:00:00Z"
+    createdAt: "2026-07-19T09:00:00Z",
+    updatedAt: "2026-07-19T09:00:00Z"
   },
   {
     id: "w4",
@@ -389,8 +389,8 @@ export const mockWishlistItems: WishlistItem[] = [
     status: "Belum Dibeli",
     prioritas: "Rendah",
     catatan: "Diletakkan di wishlist, siapa tahu ada rekan kantor yang ingin memberi kado lahiran.",
-    createdAt: "2026-05-25T11:00:00Z",
-    updatedAt: "2026-05-25T11:00:00Z"
+    createdAt: "2026-07-24T11:00:00Z",
+    updatedAt: "2026-07-24T11:00:00Z"
   },
   {
     id: "w5",
@@ -405,8 +405,8 @@ export const mockWishlistItems: WishlistItem[] = [
     status: "Sudah Dibeli",
     prioritas: "Tinggi",
     catatan: "Wajib punya sebelum bayi lahir untuk indikator demam akurat via telinga.",
-    createdAt: "2026-05-10T11:00:00Z",
-    updatedAt: "2026-06-01T11:00:00Z"
+    createdAt: "2026-07-09T11:00:00Z",
+    updatedAt: "2026-07-31T11:00:00Z"
   }
 ];
 
@@ -420,8 +420,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 1",
     kategori: "Kesehatan",
     status: "Selesai",
-    createdAt: "2026-01-20T10:00:00Z",
-    updatedAt: "2026-04-01T10:00:00Z"
+    createdAt: "2026-03-21T10:00:00Z",
+    updatedAt: "2026-05-31T10:00:00Z"
   },
   {
     id: "c1-folat",
@@ -431,8 +431,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 1",
     kategori: "Kesehatan",
     status: "Selesai",
-    createdAt: "2026-01-21T10:00:00Z",
-    updatedAt: "2026-01-21T10:00:00Z"
+    createdAt: "2026-03-22T10:00:00Z",
+    updatedAt: "2026-03-22T10:00:00Z"
   },
   {
     id: "c2",
@@ -442,8 +442,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 2",
     kategori: "Kunjungan Rumah Sakit",
     status: "Selesai",
-    createdAt: "2026-02-12T10:00:00Z",
-    updatedAt: "2026-02-12T10:00:00Z"
+    createdAt: "2026-04-13T10:00:00Z",
+    updatedAt: "2026-04-13T10:00:00Z"
   },
   {
     id: "c_morningsick",
@@ -453,8 +453,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 2",
     kategori: "Kesehatan",
     status: "Selesai",
-    createdAt: "2026-02-15T10:00:00Z",
-    updatedAt: "2026-02-15T10:00:00Z"
+    createdAt: "2026-04-16T10:00:00Z",
+    updatedAt: "2026-04-16T10:00:00Z"
   },
   {
     id: "c_choose_dr",
@@ -464,8 +464,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 3",
     kategori: "Riset Rumah Sakit",
     status: "Selesai",
-    createdAt: "2026-03-05T10:00:00Z",
-    updatedAt: "2026-03-05T10:00:00Z"
+    createdAt: "2026-05-04T10:00:00Z",
+    updatedAt: "2026-05-04T10:00:00Z"
   },
 
   // Trimester 2
@@ -477,8 +477,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 4",
     kategori: "Riset Rumah Sakit",
     status: "Selesai",
-    createdAt: "2026-04-10T10:00:00Z",
-    updatedAt: "2026-05-15T10:00:00Z"
+    createdAt: "2026-06-09T10:00:00Z",
+    updatedAt: "2026-07-14T10:00:00Z"
   },
   {
     id: "c_nipt_test",
@@ -488,8 +488,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 4",
     kategori: "Kesehatan",
     status: "Selesai",
-    createdAt: "2026-04-12T10:00:00Z",
-    updatedAt: "2026-04-20T10:00:00Z"
+    createdAt: "2026-06-11T10:00:00Z",
+    updatedAt: "2026-06-19T10:00:00Z"
   },
   {
     id: "c_stretch",
@@ -499,8 +499,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 5",
     kategori: "Kesehatan",
     status: "Selesai",
-    createdAt: "2026-05-02T10:00:00Z",
-    updatedAt: "2026-05-02T10:00:00Z"
+    createdAt: "2026-07-01T10:00:00Z",
+    updatedAt: "2026-07-01T10:00:00Z"
   },
   {
     id: "c_saving_plan",
@@ -510,8 +510,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 5",
     kategori: "Keuangan",
     status: "Selesai",
-    createdAt: "2026-05-10T10:00:00Z",
-    updatedAt: "2026-05-10T10:00:00Z"
+    createdAt: "2026-07-09T10:00:00Z",
+    updatedAt: "2026-07-09T10:00:00Z"
   },
   {
     id: "c_senam",
@@ -521,8 +521,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 6",
     kategori: "Kesehatan",
     status: "Selesai",
-    createdAt: "2026-05-20T10:00:00Z",
-    updatedAt: "2026-05-25T10:00:00Z"
+    createdAt: "2026-07-19T10:00:00Z",
+    updatedAt: "2026-07-24T10:00:00Z"
   },
 
   // Trimester 3
@@ -534,8 +534,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 8",
     kategori: "Persiapan Melahirkan",
     status: "Belum Selesai",
-    createdAt: "2026-06-01T10:00:00Z",
-    updatedAt: "2026-06-01T10:00:00Z"
+    createdAt: "2026-07-31T10:00:00Z",
+    updatedAt: "2026-07-31T10:00:00Z"
   },
   {
     id: "c_laktasi_class",
@@ -545,8 +545,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 8",
     kategori: "Pendidikan & Kelas",
     status: "Belum Selesai",
-    createdAt: "2026-06-02T10:00:00Z",
-    updatedAt: "2026-06-02T10:00:00Z"
+    createdAt: "2026-08-01T10:00:00Z",
+    updatedAt: "2026-08-01T10:00:00Z"
   },
   {
     id: "c_pijat_perineum",
@@ -556,8 +556,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 9",
     kategori: "Kesehatan",
     status: "Belum Selesai",
-    createdAt: "2026-06-03T10:00:00Z",
-    updatedAt: "2026-06-03T10:00:00Z"
+    createdAt: "2026-08-02T10:00:00Z",
+    updatedAt: "2026-08-02T10:00:00Z"
   },
   {
     id: "c_tanda_lahiran",
@@ -567,8 +567,8 @@ export const mockChecklistItems: ChecklistItem[] = [
     bulan: "Bulan 9",
     kategori: "Persiapan Melahirkan",
     status: "Belum Selesai",
-    createdAt: "2026-06-04T10:00:00Z",
-    updatedAt: "2026-06-04T10:00:00Z"
+    createdAt: "2026-08-03T10:00:00Z",
+    updatedAt: "2026-08-03T10:00:00Z"
   }
 ];
 
@@ -576,7 +576,7 @@ export const mockMedicalVisits: MedicalVisit[] = [
   {
     id: "mv1",
     userId: "preview_user_id",
-    tanggalKunjungan: "2026-02-15",
+    tanggalKunjungan: "2026-04-16",
     usiaKehamilan: "4 Minggu 0 Hari",
     dokterBidan: "Dr. Amanda, SpOG",
     tempat: "Klinik Utama Sehati",
@@ -585,14 +585,14 @@ export const mockMedicalVisits: MedicalVisit[] = [
     hasilCatatan: "Kantung kehamilan nampak ukuran sferis 1.2 cm, posisi aman di fundus uteri.",
     biaya: 850000,
     resepVitamin: "Asam Folat 400 mcg",
-    jadwalBerikutnya: "2026-03-15",
-    createdAt: "2026-02-15T11:00:00Z",
-    updatedAt: "2026-02-15T11:00:00Z"
+    jadwalBerikutnya: "2026-05-14",
+    createdAt: "2026-04-16T11:00:00Z",
+    updatedAt: "2026-04-16T11:00:00Z"
   },
   {
     id: "mv2",
     userId: "preview_user_id",
-    tanggalKunjungan: "2026-03-15",
+    tanggalKunjungan: "2026-05-14",
     usiaKehamilan: "8 Minggu 1 Hari",
     dokterBidan: "Dr. Amanda, SpOG",
     tempat: "Klinik Utama Sehati",
@@ -601,14 +601,14 @@ export const mockMedicalVisits: MedicalVisit[] = [
     hasilCatatan: "Detak jantung bayi terdengar kuat berirama (142 bpm), CRL berukuran 2.1 cm.",
     biaya: 720000,
     resepVitamin: "Promavit multivitamin, suplemen kalsium",
-    jadwalBerikutnya: "2026-04-15",
-    createdAt: "2026-03-15T12:00:00Z",
-    updatedAt: "2026-03-15T12:00:00Z"
+    jadwalBerikutnya: "2026-06-14",
+    createdAt: "2026-05-14T12:00:00Z",
+    updatedAt: "2026-05-14T12:00:00Z"
   },
   {
     id: "mv3",
     userId: "preview_user_id",
-    tanggalKunjungan: "2026-04-15",
+    tanggalKunjungan: "2026-06-14",
     usiaKehamilan: "12 Minggu 4 Hari",
     dokterBidan: "Dr. Amanda, SpOG",
     tempat: "Klinik Utama Sehati",
@@ -617,14 +617,14 @@ export const mockMedicalVisits: MedicalVisit[] = [
     hasilCatatan: "USG detail mengonfirmasi tulang hidung terbentuk, tebal tengkuk Nuchal Translucency normal (NT: 1.3 mm).",
     biaya: 950000,
     resepVitamin: "Folamil Genio, Osteocare Kalsium, serat makanan tambahan",
-    jadwalBerikutnya: "2026-05-15",
-    createdAt: "2026-04-15T10:00:00Z",
-    updatedAt: "2026-04-15T10:00:00Z"
+    jadwalBerikutnya: "2026-07-14",
+    createdAt: "2026-06-14T10:00:00Z",
+    updatedAt: "2026-06-14T10:00:00Z"
   },
   {
     id: "mv4",
     userId: "preview_user_id",
-    tanggalKunjungan: "2026-05-15",
+    tanggalKunjungan: "2026-07-14",
     usiaKehamilan: "16 Minggu 6 Hari",
     dokterBidan: "Dr. Amanda, SpOG",
     tempat: "Klinik Utama Sehati",
@@ -633,9 +633,9 @@ export const mockMedicalVisits: MedicalVisit[] = [
     hasilCatatan: "Gerakan halus bayi mulai terasa lembut, detak jantung 148 bpm. Kondisi plasenta di atas aman.",
     biaya: 750000,
     resepVitamin: "Folamil Genio, Kalsium Sandoz, Sangobion Zat Besi",
-    jadwalBerikutnya: "2026-06-15",
-    createdAt: "2026-05-15T11:00:00Z",
-    updatedAt: "2026-05-15T11:00:00Z"
+    jadwalBerikutnya: "2026-08-14",
+    createdAt: "2026-07-14T11:00:00Z",
+    updatedAt: "2026-07-14T11:00:00Z"
   }
 ];
 
@@ -652,8 +652,8 @@ export const mockBabyNames: BabyName[] = [
     statusPilihan: "Pilihan Utama",
     isFavorite: true,
     votes: 8,
-    createdAt: "2026-03-01T10:00:00Z",
-    updatedAt: "2026-03-01T10:00:00Z"
+    createdAt: "2026-04-30T10:00:00Z",
+    updatedAt: "2026-04-30T10:00:00Z"
   },
   {
     id: "n2",
@@ -667,8 +667,8 @@ export const mockBabyNames: BabyName[] = [
     statusPilihan: "Favorit",
     isFavorite: true,
     votes: 14,
-    createdAt: "2026-03-05T12:00:00Z",
-    updatedAt: "2026-03-05T12:00:00Z"
+    createdAt: "2026-05-04T12:00:00Z",
+    updatedAt: "2026-05-04T12:00:00Z"
   },
   {
     id: "n3",
@@ -682,8 +682,8 @@ export const mockBabyNames: BabyName[] = [
     statusPilihan: "Pertimbangan",
     isFavorite: false,
     votes: 11,
-    createdAt: "2026-03-10T10:00:00Z",
-    updatedAt: "2026-03-10T10:00:00Z"
+    createdAt: "2026-05-09T10:00:00Z",
+    updatedAt: "2026-05-09T10:00:00Z"
   },
   {
     id: "n4",
@@ -697,8 +697,8 @@ export const mockBabyNames: BabyName[] = [
     statusPilihan: "Pilihan Kami",
     isFavorite: true,
     votes: 5,
-    createdAt: "2026-03-15T11:00:00Z",
-    updatedAt: "2026-03-15T11:00:00Z"
+    createdAt: "2026-05-14T11:00:00Z",
+    updatedAt: "2026-05-14T11:00:00Z"
   },
   {
     id: "n5",
@@ -712,8 +712,8 @@ export const mockBabyNames: BabyName[] = [
     statusPilihan: "Pilihan Utama",
     isFavorite: false,
     votes: 2,
-    createdAt: "2026-03-20T10:00:00Z",
-    updatedAt: "2026-03-20T10:00:00Z"
+    createdAt: "2026-05-19T10:00:00Z",
+    updatedAt: "2026-05-19T10:00:00Z"
   }
 ];
 
@@ -725,8 +725,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Ibu",
     jumlah: 3,
     status: "Siap",
-    createdAt: "2026-05-10T09:00:00Z",
-    updatedAt: "2026-06-01T09:00:00Z"
+    createdAt: "2026-07-09T09:00:00Z",
+    updatedAt: "2026-07-31T09:00:00Z"
   },
   {
     id: "hb_pembalut",
@@ -735,8 +735,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Ibu",
     jumlah: 2,
     status: "Siap",
-    createdAt: "2026-05-11T09:00:00Z",
-    updatedAt: "2026-06-01T09:00:00Z"
+    createdAt: "2026-07-10T09:00:00Z",
+    updatedAt: "2026-07-31T09:00:00Z"
   },
   {
     id: "hb_bra",
@@ -745,8 +745,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Ibu",
     jumlah: 3,
     status: "Belum Siap",
-    createdAt: "2026-05-12T09:00:00Z",
-    updatedAt: "2026-05-12T09:00:00Z"
+    createdAt: "2026-07-11T09:00:00Z",
+    updatedAt: "2026-07-11T09:00:00Z"
   },
   {
     id: "hb2",
@@ -755,8 +755,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Bayi",
     jumlah: 6,
     status: "Siap",
-    createdAt: "2026-05-11T09:00:00Z",
-    updatedAt: "2026-06-02T09:00:00Z"
+    createdAt: "2026-07-10T09:00:00Z",
+    updatedAt: "2026-08-01T09:00:00Z"
   },
   {
     id: "hb_diaper",
@@ -765,8 +765,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Bayi",
     jumlah: 15,
     status: "Siap",
-    createdAt: "2026-05-15T10:00:00Z",
-    updatedAt: "2026-05-15T10:00:00Z"
+    createdAt: "2026-07-14T10:00:00Z",
+    updatedAt: "2026-07-14T10:00:00Z"
   },
   {
     id: "hb_babyout",
@@ -775,8 +775,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Bayi",
     jumlah: 2,
     status: "Siap",
-    createdAt: "2026-05-16T10:00:00Z",
-    updatedAt: "2026-05-16T10:00:00Z"
+    createdAt: "2026-07-15T10:00:00Z",
+    updatedAt: "2026-07-15T10:00:00Z"
   },
   {
     id: "hb_dadsout",
@@ -785,8 +785,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Ayah",
     jumlah: 2,
     status: "Belum Siap",
-    createdAt: "2026-05-18T11:00:00Z",
-    updatedAt: "2026-05-18T11:00:00Z"
+    createdAt: "2026-07-17T11:00:00Z",
+    updatedAt: "2026-07-17T11:00:00Z"
   },
   {
     id: "hb3",
@@ -795,8 +795,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Dokumen Penting",
     jumlah: 1,
     status: "Belum Siap",
-    createdAt: "2026-05-12T09:00:00Z",
-    updatedAt: "2026-05-12T09:00:00Z"
+    createdAt: "2026-07-11T09:00:00Z",
+    updatedAt: "2026-07-11T09:00:00Z"
   },
   {
     id: "hb_power",
@@ -805,8 +805,8 @@ export const mockHospitalBagItems: HospitalBagItem[] = [
     kategori: "Perlengkapan Ayah",
     jumlah: 2,
     status: "Siap",
-    createdAt: "2026-05-20T10:00:00Z",
-    updatedAt: "2026-05-20T10:00:00Z"
+    createdAt: "2026-07-19T10:00:00Z",
+    updatedAt: "2026-07-19T10:00:00Z"
   }
 ];
 
@@ -825,8 +825,8 @@ export const mockHospitalComparisons: HospitalComparison[] = [
     kontak: "(021) 1500-799",
     linkGmap: "https://maps.app.goo.gl/BundaMenteng",
     rating: 5,
-    createdAt: "2026-03-25T10:00:00Z",
-    updatedAt: "2026-05-12T10:00:00Z"
+    createdAt: "2026-05-24T10:00:00Z",
+    updatedAt: "2026-07-11T10:00:00Z"
   },
   {
     id: "h2",
@@ -842,8 +842,8 @@ export const mockHospitalComparisons: HospitalComparison[] = [
     kontak: "(021) 2260-2525",
     linkGmap: "https://maps.app.goo.gl/HerminaKemayoran",
     rating: 4,
-    createdAt: "2026-03-26T10:00:00Z",
-    updatedAt: "2026-05-12T10:00:00Z"
+    createdAt: "2026-05-25T10:00:00Z",
+    updatedAt: "2026-07-11T10:00:00Z"
   },
   {
     id: "h3",
@@ -859,7 +859,7 @@ export const mockHospitalComparisons: HospitalComparison[] = [
     kontak: "0812-9900-1122",
     linkGmap: "https://maps.app.goo.gl/KlinikSehatiDepok",
     rating: 4,
-    createdAt: "2026-03-27T10:00:00Z",
-    updatedAt: "2026-05-12T10:00:00Z"
+    createdAt: "2026-05-26T10:00:00Z",
+    updatedAt: "2026-07-11T10:00:00Z"
   }
 ];
