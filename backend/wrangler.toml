@@ -4,7 +4,7 @@ compatibility_date = "2026-06-18"
 
 # Environmental variables
 [vars]
-FIREBASE_PROJECT_ID = "steel-market-8jhcx"
+FIREBASE_PROJECT_ID = "babyplan-auth"
 
 # KV Namespace bindings
 [[kv_namespaces]]
