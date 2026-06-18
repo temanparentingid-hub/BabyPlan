@@ -11,7 +11,20 @@ import {
   AllowedEmail
 } from "./types";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8787";
+const getApiUrl = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  if (typeof window !== "undefined") {
+    const hostname = window.location.hostname;
+    if (hostname !== "localhost" && hostname !== "127.0.0.1") {
+      return "https://api.babyplan.my.id";
+    }
+  }
+  return "http://localhost:8787";
+};
+
+const API_URL = getApiUrl();
 
 async function getAuthHeaders() {
   const user = auth.currentUser;
