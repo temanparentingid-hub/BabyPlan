@@ -279,7 +279,13 @@ export default function ChecklistManager({
         </div>
         <button
           id="section-add-custom-checklist"
-          onClick={() => setIsAddModalOpen(true)}
+          onClick={() => {
+            if (isDemo) {
+              onTriggerLogin();
+            } else {
+              setIsAddModalOpen(true);
+            }
+          }}
           type="button"
           className="bg-[#14B8B8] hover:bg-[#14B8B8]/95 max-sm:w-full sm:w-auto text-white text-xs sm:text-sm font-black px-5 py-3 rounded-2xl shadow-md shadow-[#14B8B8]/15 flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-95 shrink-0 self-stretch sm:self-center"
         >
