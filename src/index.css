@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-teal: #14B8B8;
+  --color-mint-light: #DDF7EF;
+  --color-warm-apricot: #FFF1D6;
+  --color-lavender-light: #E8E4FF;
+  --color-slate-green: #2F3A3A;
+  --color-sandy-bg: #FAF9F5;
+}
+
+/* Base layouts */
+body {
+  background-color: var(--color-sandy-bg);
+  color: var(--color-slate-green);
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Elegant integration of Geometric Balance typography key headlines */
+h1, h2, h3, h4, .font-display-title {
+  font-family: var(--font-display), sans-serif !important;
+  letter-spacing: -0.025em;
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8E4FF;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #14B8B8;
+}
+
+/* Animations for delightful seamless transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.88; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2.5s ease-in-out infinite;
+}
+

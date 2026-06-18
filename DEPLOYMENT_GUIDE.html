@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panduan Deployment Cloudflare - Baby Budget Plan</title>
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-color: #FAF9F5;
+      --card-bg: #FFFFFF;
+      --text-main: #2F3A3A;
+      --text-mute: #6E7C7C;
+      --primary: #14B8B8;
+      --primary-hover: #0E9090;
+      --border-color: #E8E4FF;
+      
+      --alert-info-bg: #E8F7F5;
+      --alert-info-border: #14B8B8;
+      --alert-info-text: #0E9090;
+      
+      --alert-warning-bg: #FFF9EE;
+      --alert-warning-border: #F59E0B;
+      --alert-warning-text: #B45309;
+
+      --alert-tip-bg: #EEF2FF;
+      --alert-tip-border: #6366F1;
+      --alert-tip-text: #4338CA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .description {
+      color: var(--text-mute);
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .prereq-list {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 24px;
+      list-style-type: none;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .prereq-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .prereq-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .prereq-list li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 1.1rem;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(20, 184, 184, 0.3);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .step-badge {
+      background: var(--primary);
+      color: #FFFFFF;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      margin-right: 15px;
+    }
+
+    .step-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .step-card p {
+      color: var(--text-mute);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      background: #F3F1EB;
+      padding: 3px 6px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #C7254E;
+    }
+
+    pre {
+      background: #1E2525;
+      color: #FAF9F5;
+      padding: 18px;
+      border-radius: 16px;
+      overflow-x: auto;
+      margin: 15px 0;
+      position: relative;
+    }
+
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: #7BEAD2;
+      font-size: 0.85rem;
+    }
+
+    /* Alerts */
+    .alert {
+      padding: 16px 20px;
+      border-radius: 16px;
+      margin: 18px 0;
+      font-size: 0.9rem;
+      border-left: 5px solid;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .alert-icon {
+      margin-right: 12px;
+      font-size: 1.2rem;
+      margin-top: 2px;
+    }
+
+    .alert-content {
+      flex: 1;
+    }
+
+    .alert-info {
+      background: var(--alert-info-bg);
+      border-color: var(--alert-info-border);
+      color: var(--alert-info-text);
+    }
+
+    .alert-warning {
+      background: var(--alert-warning-bg);
+      border-color: var(--alert-warning-border);
+      color: var(--alert-warning-text);
+    }
+
+    .alert-tip {
+      background: var(--alert-tip-bg);
+      border-color: var(--alert-tip-border);
+      color: var(--alert-tip-text);
+    }
+
+    .file-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .file-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--text-mute);
+      font-size: 0.85rem;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Panduan Deployment Cloudflare Stack</h1>
+    <p class="description">Langkah migrasi database ke Cloudflare D1 & KV dan deployment WebApp ke domain <strong>babyplan.my.id</strong>.</p>
+  </header>
+
+  <h2>📋 Prasyarat Sebelum Memulai</h2>
+  <ul class="prereq-list">
+    <li>Akun aktif di <a href="https://dash.cloudflare.com/" target="_blank" class="file-link">Cloudflare Dashboard</a>.</li>
+    <li>Kepemilikan domain <strong>babyplan.my.id</strong>.</li>
+    <li>Aplikasi <strong>Node.js</strong> terinstal di komputer lokal Anda untuk menjalankan paket perintah.</li>
+  </ul>
+
+  <h2>🛠️ Langkah-Langkah Deployment</h2>
+
+  <!-- Langkah 0.A -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge" style="background-color: #6366F1;">Langkah 0.A</span>
+      <span class="step-title">Membuat Repository GitHub Baru</span>
+    </div>
+    <p>Hubungkan folder lokal proyek Anda ke repository GitHub baru bernama <strong>`BabyPlan`</strong>:</p>
+    <pre><code># Jalankan di folder utama proyek (root BabyPlan)
+git init
+git add .
+git commit -m "Initial commit - Cloudflare Stack setup"
+git branch -M main
+git remote add origin https://github.com/USERNAME_ANDA/BabyPlan.git
+git push -u origin main</code></pre>
+  </div>
+
+  <!-- Langkah 0.B -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge" style="background-color: #6366F1;">Langkah 0.B</span>
+      <span class="step-title">Konfigurasi DNS Domain babyplan.my.id ke Cloudflare</span>
+    </div>
+    <p>Arahkan pengelolaan DNS domain Anda ke Cloudflare agar Cloudflare Pages & Workers dapat dihubungkan:</p>
+    <ol style="margin-left: 20px; font-size: 0.95rem; color: var(--text-mute); margin-bottom: 15px;">
+      <li style="margin-bottom: 8px;">Masuk ke dashboard <strong>Cloudflare</strong>, klik <strong>Add a Site</strong>, lalu masukkan nama domain <code>babyplan.my.id</code>.</li>
+      <li style="margin-bottom: 8px;">Pilih paket gratis (<strong>Free plan</strong>) dan salin 2 alamat <strong>Nameservers</strong> yang disediakan.</li>
+      <li style="margin-bottom: 8px;">Masuk ke panel provider tempat Anda membeli domain <code>babyplan.my.id</code>, cari menu **Nameservers**, lalu ganti dengan Nameservers dari Cloudflare tersebut.</li>
+      <li>Tunggu status domain menjadi **Active** di Cloudflare Dashboard (biasanya memakan waktu beberapa menit).</li>
+    </ol>
+  </div>
+
+  <!-- Langkah 1 -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge">Langkah 1</span>
+      <span class="step-title">Instalasi Perkakas Wrangler CLI</span>
+    </div>
+    <p>Buka terminal Anda, lalu arahkan ke direktori <code>backend</code> di dalam proyek Anda untuk menginstal module wrangler:</p>
+    <pre><code>cd backend
+npm install</code></pre>
+  </div>
+
+  <!-- Langkah 2 -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge">Langkah 2</span>
+      <span class="step-title">Hubungkan Terminal ke Cloudflare (Login)</span>
+    </div>
+    <p>Autentikasi akun Cloudflare Anda pada terminal lokal dengan menjalankan perintah:</p>
+    <pre><code>npx wrangler login</code></pre>
+    <p>Layar browser web Anda akan otomatis terbuka. Klik tombol <strong>Allow</strong> / <strong>Izinkan</strong> untuk menuntaskan login, kemudian kembali ke terminal Anda.</p>
+  </div>
+
+  <!-- Langkah 3 -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge">Langkah 3</span>
+      <span class="step-title">Membuat Database D1 & KV Namespace</span>
+    </div>
+    <p>Buat instansi database SQL SQLite (D1) baru dan KV Storage untuk allowed_emails di edge network Cloudflare:</p>
+    <pre><code># 1. Membuat D1 Database
+npx wrangler d1 create babyplan-db
+
+# 2. Membuat KV Namespace
+npx wrangler kv:namespace create BABYPLAN_KV</code></pre>
+    <div class="alert alert-warning">
+      <span class="alert-icon">⚠️</span>
+      <div class="alert-content">
+        <strong>Perhatikan Output ID!</strong> Setelah perintah selesai, catat string ID unik yang dihasilkan di layar terminal (misal: <code>database_id</code> dan <code>id</code> namespace). Anda membutuhkannya di langkah berikutnya.
+      </div>
+    </div>
+  </div>
+
+  <!-- Langkah 4 -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge">Langkah 4</span>
+      <span class="step-title">Sinkronisasi File wrangler.toml</span>
+    </div>
+    <p>Buka berkas konfigurasi Wrangler di <a href="file:///Users/dony.alv/Teman%20Parenting/Website/BabyPlan/backend/wrangler.toml" class="file-link">backend/wrangler.toml</a> pada editor kode Anda.</p>
+    <p>Perbarui ID penampung dengan ID riil yang Anda salin dari Langkah 3:</p>
+    <pre><code># Sesuaikan bagian KV & D1 dengan ID asli Anda
+[[kv_namespaces]]
+binding = "BABYPLAN_KV"
+id = "MASUKKAN_ID_KV_NAMESPACE_DI_SINI"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "babyplan-db"
+database_id = "MASUKKAN_ID_DATABASE_D1_DI_SINI"</code></pre>
+  </div>
+
+  <!-- Langkah 5 -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge">Langkah 5</span>
+      <span class="step-title">Terapkan Skema Tabel Database D1</span>
+    </div>
+    <p>Buat semua tabel relational database di Cloudflare menggunakan file skema SQL yang telah disediakan di <a href="file:///Users/dony.alv/Teman%20Parenting/Website/BabyPlan/backend/schema.sql" class="file-link">backend/schema.sql</a>:</p>
+    <pre><code>npx wrangler d1 execute babyplan-db --remote --file=./schema.sql</code></pre>
+  </div>
+
+  <!-- Langkah 6 -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge">Langkah 6</span>
+      <span class="step-title">Deploy API Worker Backend & Binding Subdomain</span>
+    </div>
+    <p>Kirim kode router API Worker Anda yang tertulis di <a href="file:///Users/dony.alv/Teman%20Parenting/Website/BabyPlan/backend/src/index.js" class="file-link">backend/src/index.js</a> ke Cloudflare edge server:</p>
+    <pre><code>npx wrangler deploy</code></pre>
+    <p><strong>Hubungkan Subdomain API Domain Anda:</strong></p>
+    <ol style="margin-left: 20px; font-size: 0.95rem; color: var(--text-mute);">
+      <li style="margin-bottom: 8px;">Masuk ke dashboard web <strong>Cloudflare</strong>.</li>
+      <li style="margin-bottom: 8px;">Masuk ke menu <strong>Workers & Pages</strong> > Pilih Worker **babyplan-backend**.</li>
+      <li style="margin-bottom: 8px;">Masuk ke tab <strong>Triggers</strong> > klik tombol **Add Custom Domain** di bawah kolom Custom Domains.</li>
+      <li>Masukkan subdomain API Anda: <code>api.babyplan.my.id</code>, lalu simpan.</li>
+    </ol>
+  </div>
+
+  <!-- Langkah 7 -->
+  <div class="step-card">
+    <div class="step-header">
+      <span class="step-badge">Langkah 7</span>
+      <span class="step-title">Deploy Frontend Menggunakan Cloudflare Pages</span>
+    </div>
+    <p>Alih-alih Firebase Hosting, kita akan menggunakan **Cloudflare Pages** untuk meng-host frontend React secara serverless:</p>
+    <ol style="margin-left: 20px; font-size: 0.95rem; color: var(--text-mute);">
+      <li style="margin-bottom: 8px;">Buka dashboard <strong>Cloudflare</strong> > masuk ke menu <strong>Workers & Pages</strong> > pilih tab <strong>Pages</strong> > klik **Create a project** > **Connect to Git**.</li>
+      <li style="margin-bottom: 8px;">Hubungkan akun GitHub Anda dan pilih repositori **`BabyPlan`**.</li>
+      <li style="margin-bottom: 8px;">Pada bagian **Build Settings**:
+        <ul>
+          <li>Framework Preset: <code>Vite</code></li>
+          <li>Build command: <code>npm run build</code></li>
+          <li>Build output directory: <code>dist</code></li>
+        </ul>
+      </li>
+      <li style="margin-bottom: 8px;">Buka bagian **Environment variables (advanced)**, tambahkan variabel baru:
+        <br>Key: <code>VITE_API_URL</code>
+        <br>Value: <code>https://api.babyplan.my.id</code>
+      </li>
+      <li style="margin-bottom: 8px;">Klik **Save and Deploy**. Cloudflare Pages akan menarik kode Anda dari GitHub, melakukan kompilasi build, dan meng-host web secara otomatis.</li>
+      <li style="margin-bottom: 8px;">Setelah proses build selesai, buka proyek Pages tersebut di dashboard, pergi ke tab **Custom Domains**, klik **Set up a custom domain**, masukkan domain utama Anda: <code>babyplan.my.id</code>, lalu konfirmasi.</li>
+    </ol>
+    <div class="alert alert-tip">
+      <span class="alert-icon">💡</span>
+      <div class="alert-content">
+        Dengan metode Git Integration ini, setiap kali Anda melakukan <code>git push origin main</code> di masa mendatang, Cloudflare Pages akan otomatis mendeteksi perubahan dan memperbarui website Anda secara otomatis!
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© Teman Parenting • Dirancang untuk Keandalan & Efisiensi Database Tanpa Batasan</p>
+  </footer>
+</div>
+
+</body>
+</html>

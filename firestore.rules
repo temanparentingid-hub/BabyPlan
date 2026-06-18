@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Check if user is signed in
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Profiles Collection: document ID is user's UID
+    match /profiles/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow create, update, delete: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Budget Items Collection
+    match /budgetItems/{id} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Wishlist Items Collection
+    match /wishlistItems/{id} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Checklist Items Collection
+    match /checklistItems/{id} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Medical Visits Collection
+    match /medicalVisits/{id} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Baby Names Collection
+    match /babyNames/{id} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Hospital Bag Items Collection
+    match /hospitalBagItems/{id} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Hospital Comparisons Collection
+    match /hospitalComparisons/{id} {
+      allow read: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+      allow create, update: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid);
+    }
+
+    // Whitelisted / Allowed Emails Collection
+    match /allowedEmails/{email} {
+      allow get: if true;
+      allow write, list: if request.auth != null && request.auth.token.email == 'temanparenting.id@gmail.com';
+    }
+  }
+}

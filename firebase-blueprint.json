@@ -1,0 +1,216 @@
+{
+  "entities": {
+    "PregnancyProfile": {
+      "title": "Pregnancy Profile",
+      "description": "User profile details relating to pregnancy and budget targets",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user this profile belongs to" },
+        "namaMoms": { "type": "string", "description": "Name of the mother" },
+        "namaDads": { "type": "string", "description": "Name of the father or partner (optional)" },
+        "namaBayi": { "type": "string", "description": "Baby name or nickname (optional)" },
+        "hpht": { "type": "string", "description": "First day of last menstrual period (YYYY-MM-DD)" },
+        "hpl": { "type": "string", "description": "Estimated due date (YYYY-MM-DD)" },
+        "pilihanPerhitungan": { "type": "string", "enum": ["HPHT", "HPL"], "description": "Whether calculations are based on HPHT or HPL" },
+        "targetBudget": { "type": "number", "description": "Total target budget in the selected currency" },
+        "mataUang": { "type": "string", "description": "Currency abbreviation, e.g. IDR" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp of creation" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp of last update" }
+      },
+      "required": ["userId", "namaMoms", "hpht", "hpl", "pilihanPerhitungan", "targetBudget", "mataUang", "createdAt", "updatedAt"]
+    },
+    "BudgetItem": {
+      "title": "Budget Item",
+      "description": "A single budget planning and actual expense tracking item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier of the budget item" },
+        "userId": { "type": "string", "description": "The UID of the user this item belongs to" },
+        "tanggal": { "type": "string", "description": "Transaction or plan date (YYYY-MM-DD)" },
+        "nama": { "type": "string", "description": "Name of the expense/budget item" },
+        "kategori": { "type": "string", "description": "Category, e.g., Medis, Perlengkapan, Persalinan" },
+        "subkategori": { "type": "string", "description": "Subcategory details" },
+        "prioritas": { "type": "string", "enum": ["Tinggi", "Sedang", "Rendah"], "description": "Significance tier" },
+        "rencana": { "type": "number", "description": "Planned budget amount" },
+        "aktual": { "type": "number", "description": "Actual expense amount paid" },
+        "statusPembayaran": { "type": "string", "enum": ["Belum Lunas", "Lunas", "DP"], "description": "Payment status" },
+        "metode": { "type": "string", "description": "Payment method, e.g. Cash, Transfer" },
+        "catatan": { "type": "string", "description": "Optional notes" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "tanggal", "nama", "kategori", "prioritas", "rencana", "aktual", "statusPembayaran", "createdAt", "updatedAt"]
+    },
+    "WishlistItem": {
+      "title": "Wishlist Item",
+      "description": "Item of products comparing and buying wishlists",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "nama": { "type": "string" },
+        "kategori": { "type": "string" },
+        "brand": { "type": "string" },
+        "estimasi": { "type": "number" },
+        "hargaAktual": { "type": "number" },
+        "jumlah": { "type": "number" },
+        "link": { "type": "string" },
+        "status": { "type": "string", "enum": ["Belum Dibeli", "Sudah Dibeli"] },
+        "prioritas": { "type": "string", "enum": ["Tinggi", "Sedang", "Rendah"] },
+        "catatan": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "nama", "kategori", "estimasi", "hargaAktual", "jumlah", "status", "prioritas", "createdAt", "updatedAt"]
+    },
+    "ChecklistItem": {
+      "title": "Checklist Item",
+      "description": "Trimester and month preparation check item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "nama": { "type": "string" },
+        "trimester": { "type": "number" },
+        "bulan": { "type": "number" },
+        "kategori": { "type": "string" },
+        "prioritas": { "type": "string", "enum": ["Tinggi", "Sedang", "Rendah"] },
+        "status": { "type": "string", "enum": ["Belum", "Selesai"] },
+        "target": { "type": "string" },
+        "catatan": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "nama", "trimester", "bulan", "prioritas", "status", "createdAt", "updatedAt"]
+    },
+    "MedicalVisit": {
+      "title": "Medical Visit",
+      "description": "Medical control notes and logs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "usiaKehamilan": { "type": "string" },
+        "dokterBidan": { "type": "string" },
+        "tempat": { "type": "string" },
+        "jenisPemeriksaan": { "type": "string" },
+        "keluhan": { "type": "string" },
+        "hasil": { "type": "string" },
+        "resep": { "type": "string" },
+        "jadwalBerikutnya": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "tanggal", "usiaKehamilan", "dokterBidan", "tempat", "jenisPemeriksaan", "createdAt", "updatedAt"]
+    },
+    "BabyName": {
+      "title": "Baby Name",
+      "description": "Baby name ideas list",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "nama": { "type": "string" },
+        "gender": { "type": "string", "enum": ["Laki-laki", "Perempuan", "Netral"] },
+        "arti": { "type": "string" },
+        "asalBahasa": { "type": "string" },
+        "referensi": { "type": "string" },
+        "status": { "type": "string", "enum": ["Favorit", "Dipertimbangkan", "Dieliminasi"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "nama", "gender", "status", "createdAt", "updatedAt"]
+    },
+    "HospitalBagItem": {
+      "title": "Hospital Bag Item",
+      "description": "Item packed in bags for birth",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "namaBarang": { "type": "string" },
+        "kategori": { "type": "string", "enum": ["Bayi", "Moms", "Pendamping", "Dokumen"] },
+        "jumlah": { "type": "number" },
+        "prioritas": { "type": "string", "enum": ["Tinggi", "Sedang", "Rendah"] },
+        "status": { "type": "string", "enum": ["Belum Siap", "Siap"] },
+        "tasMana": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "namaBarang", "kategori", "jumlah", "prioritas", "status", "tasMana", "createdAt", "updatedAt"]
+    },
+    "HospitalComparison": {
+      "title": "Hospital Comparison",
+      "description": "Comparison between different hospital birth options",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "nama": { "type": "string" },
+        "jenis": { "type": "string" },
+        "lokasi": { "type": "string" },
+        "jarak": { "type": "number" },
+        "biayaNormal": { "type": "number" },
+        "biayaCaesar": { "type": "number" },
+        "fasilitas": { "type": "string" },
+        "nicu": { "type": "boolean" },
+        "bpjsAsuransi": { "type": "boolean" },
+        "kontak": { "type": "string" },
+        "statusKunjungan": { "type": "string", "enum": ["Belum Disurvei", "Sudah Disurvei", "Pilihan Utama"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "nama", "jenis", "lokasi", "jarak", "biayaNormal", "biayaCaesar", "nicu", "bpjsAsuransi", "statusKunjungan", "createdAt", "updatedAt"]
+    },
+    "AllowedEmail": {
+      "title": "Allowed Email",
+      "description": "Information about a whitelisted email allowing system access.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "description": "The registered email address allowed to access the application" },
+        "addedBy": { "type": "string", "description": "Who registered this email, e.g. the admin" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the email was added to the whitelist" }
+      },
+      "required": ["email", "addedBy", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/profiles/{uid}": {
+      "schema": "PregnancyProfile",
+      "description": "Store individual pregnancy configuration and budget metrics mapped by the user's Auth UID."
+    },
+    "/budgetItems/{id}": {
+      "schema": "BudgetItem",
+      "description": "Track budget elements with planning and actual values associated with a specific user ID."
+    },
+    "/wishlistItems/{id}": {
+      "schema": "WishlistItem",
+      "description": "Track wishlisted products to acquire."
+    },
+    "/checklistItems/{id}": {
+      "schema": "ChecklistItem",
+      "description": "Track task check milestones across different trimesters."
+    },
+    "/medicalVisits/{id}": {
+      "schema": "MedicalVisit",
+      "description": "Store doctor checks and pregnancy milestones."
+    },
+    "/babyNames/{id}": {
+      "schema": "BabyName",
+      "description": "Inspirational name records evaluated by moms and dads."
+    },
+    "/hospitalBagItems/{id}": {
+      "schema": "HospitalBagItem",
+      "description": "Preparation tracking of hospital bag accessories."
+    },
+    "/hospitalComparisons/{id}": {
+      "schema": "HospitalComparison",
+      "description": "Evaluate and compare up to three birth delivery locations."
+    },
+    "/allowedEmails/{email}": {
+      "schema": "AllowedEmail",
+      "description": "Whitelist of verified emails allowed to log in and access the application."
+    }
+  }
+}
