@@ -87,13 +87,18 @@ export default function App() {
             }
           } else {
             console.warn(`User ${userEmail} is not whitelisted. Signing out.`);
-            await signOut(auth);
+            if (!showLoginModal) {
+              await signOut(auth);
+            }
             setUser(null);
             setIsDemo(true);
             setLoading(false);
           }
         } else {
-          await signOut(auth);
+          console.warn("User has no valid email. Signing out.");
+          if (!showLoginModal) {
+            await signOut(auth);
+          }
           setUser(null);
           setIsDemo(true);
           setLoading(false);
@@ -114,7 +119,7 @@ export default function App() {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [showLoginModal]);
 
   const loadAllData = async () => {
     if (!user || isDemo) return;
