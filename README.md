@@ -38,9 +38,9 @@ npm install -g firebase-tools
    ```
 2. Initialize Firebase in this project directory (if not already linked) or directly target the project:
    ```bash
-   firebase use steel-market-8jhcx
+   firebase use babyplan-auth
    ```
-   *(Note: The project ID is configured as `steel-market-8jhcx`)*
+   *(Note: The project ID is configured as `babyplan-auth`)*
 
 ### Step 3: Build & Deploy
 1. Build the production application bundle:
