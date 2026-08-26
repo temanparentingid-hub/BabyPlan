@@ -31,42 +31,42 @@ interface HospitalBagManagerProps {
 }
 
 const CATEGORIES = [
-  "Perlengkapan Bayi",
-  "Perlengkapan Ibu",
-  "Perlengkapan Ayah",
-  "Dokumen Penting"
+  "Bayi",
+  "Moms",
+  "Pendamping",
+  "Dokumen"
 ];
 
 // Preloaded recommended bag list based on specifications
 const RECOMMENDATION_DATA = [
   // 1. Kategori Bayi
-  { barang: "Baju newborn", kategori: "Perlengkapan Bayi", jumlah: 3, satuan: "pcs" as const, catatan: "Katun lembut" },
-  { barang: "Bedong", kategori: "Perlengkapan Bayi", jumlah: 2, satuan: "pcs" as const, catatan: "Bahan adem" },
-  { barang: "Popok newborn", kategori: "Perlengkapan Bayi", jumlah: 1, satuan: "pack" as const, catatan: "Ukuran NB" },
-  { barang: "Topi bayi", kategori: "Perlengkapan Bayi", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk pulang RS" },
-  { barang: "Selimut bayi", kategori: "Perlengkapan Bayi", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk perjalanan pulang" },
-  { barang: "Tisu basah bayi", kategori: "Perlengkapan Bayi", jumlah: 1, satuan: "pack" as const, catatan: "Pilih non parfum" },
+  { barang: "Baju newborn", kategori: "Bayi", jumlah: 3, satuan: "pcs" as const, catatan: "Katun lembut" },
+  { barang: "Bedong", kategori: "Bayi", jumlah: 2, satuan: "pcs" as const, catatan: "Bahan adem" },
+  { barang: "Popok newborn", kategori: "Bayi", jumlah: 1, satuan: "pack" as const, catatan: "Ukuran NB" },
+  { barang: "Topi bayi", kategori: "Bayi", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk pulang RS" },
+  { barang: "Selimut bayi", kategori: "Bayi", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk perjalanan pulang" },
+  { barang: "Tisu basah bayi", kategori: "Bayi", jumlah: 1, satuan: "pack" as const, catatan: "Pilih non parfum" },
 
   // 2. Kategori Ibu
-  { barang: "Baju ganti", kategori: "Perlengkapan Ibu", jumlah: 2, satuan: "pcs" as const, catatan: "Nyaman dipakai" },
-  { barang: "Pembalut nifas", kategori: "Perlengkapan Ibu", jumlah: 1, satuan: "pack" as const, catatan: "Cadangan cukup" },
-  { barang: "Bra menyusui", kategori: "Perlengkapan Ibu", jumlah: 2, satuan: "pcs" as const, catatan: "Perlu beli lagi" },
-  { barang: "Perlengkapan mandi", kategori: "Perlengkapan Ibu", jumlah: 1, satuan: "pcs" as const, catatan: "Travel size" },
+  { barang: "Baju ganti", kategori: "Moms", jumlah: 2, satuan: "pcs" as const, catatan: "Nyaman dipakai" },
+  { barang: "Pembalut nifas", kategori: "Moms", jumlah: 1, satuan: "pack" as const, catatan: "Cadangan cukup" },
+  { barang: "Bra menyusui", kategori: "Moms", jumlah: 2, satuan: "pcs" as const, catatan: "Perlu beli lagi" },
+  { barang: "Perlengkapan mandi", kategori: "Moms", jumlah: 1, satuan: "pcs" as const, catatan: "Travel size" },
 
   // 3. Kategori Ayah
-  { barang: "Charger", kategori: "Perlengkapan Ayah", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk HP utama" },
-  { barang: "Uang tunai / kartu", kategori: "Perlengkapan Ayah", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk administrasi" },
-  { barang: "Baju ganti", kategori: "Perlengkapan Ayah", jumlah: 1, satuan: "pcs" as const, catatan: "Jika ikut menginap" },
-  { barang: "Snack / minum", kategori: "Perlengkapan Ayah", jumlah: 1, satuan: "pcs" as const, catatan: "Beli dekat hari H" },
-  { barang: "Power bank", kategori: "Perlengkapan Ayah", jumlah: 1, satuan: "pcs" as const, catatan: "Cadangan baterai" },
+  { barang: "Charger", kategori: "Pendamping", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk HP utama" },
+  { barang: "Uang tunai / kartu", kategori: "Pendamping", jumlah: 1, satuan: "pcs" as const, catatan: "Untuk administrasi" },
+  { barang: "Baju ganti", kategori: "Pendamping", jumlah: 1, satuan: "pcs" as const, catatan: "Jika ikut menginap" },
+  { barang: "Snack / minum", kategori: "Pendamping", jumlah: 1, satuan: "pcs" as const, catatan: "Beli dekat hari H" },
+  { barang: "Power bank", kategori: "Pendamping", jumlah: 1, satuan: "pcs" as const, catatan: "Cadangan baterai" },
 
   // 4. Kategori Dokumen
-  { barang: "KTP ibu", kategori: "Dokumen Penting", jumlah: 1, satuan: "pcs" as const, catatan: "Simpan di map" },
-  { barang: "KTP ayah", kategori: "Dokumen Penting", jumlah: 1, satuan: "pcs" as const, catatan: "Jika diminta administrasi" },
-  { barang: "Kartu BPJS / asuransi", kategori: "Dokumen Penting", jumlah: 1, satuan: "pcs" as const, catatan: "Cek masa aktif" },
-  { barang: "Buku KIA", kategori: "Dokumen Penting", jumlah: 1, satuan: "pcs" as const, catatan: "Wajib dibawa" },
-  { barang: "Hasil USG / lab terakhir", kategori: "Dokumen Penting", jumlah: 1, satuan: "pcs" as const, catatan: "Gabungkan dokumen" },
-  { barang: "Surat rujukan", kategori: "Dokumen Penting", jumlah: 1, satuan: "pcs" as const, catatan: "Jika diperlukan" },
+  { barang: "KTP ibu", kategori: "Dokumen", jumlah: 1, satuan: "pcs" as const, catatan: "Simpan di map" },
+  { barang: "KTP ayah", kategori: "Dokumen", jumlah: 1, satuan: "pcs" as const, catatan: "Jika diminta administrasi" },
+  { barang: "Kartu BPJS / asuransi", kategori: "Dokumen", jumlah: 1, satuan: "pcs" as const, catatan: "Cek masa aktif" },
+  { barang: "Buku KIA", kategori: "Dokumen", jumlah: 1, satuan: "pcs" as const, catatan: "Wajib dibawa" },
+  { barang: "Hasil USG / lab terakhir", kategori: "Dokumen", jumlah: 1, satuan: "pcs" as const, catatan: "Gabungkan dokumen" },
+  { barang: "Surat rujukan", kategori: "Dokumen", jumlah: 1, satuan: "pcs" as const, catatan: "Jika diperlukan" },
 ];
 
 export default function HospitalBagManager({
@@ -355,7 +355,7 @@ export default function HospitalBagManager({
           <div>
             <span className="text-xs text-gray-400 font-bold block">Perlengkapan Bayi</span>
             <strong className="text-sm text-[#2F3A3A] font-extrabold">
-              {stats.groupItems["Perlengkapan Bayi"]?.comp || 0} / {stats.groupItems["Perlengkapan Bayi"]?.total || 0} Siap
+              {stats.groupItems["Bayi"]?.comp || 0} / {stats.groupItems["Bayi"]?.total || 0} Siap
             </strong>
             <span className="text-[10px] text-gray-400 block mt-1">Baju, bedong, selimut kepala</span>
           </div>
@@ -369,7 +369,7 @@ export default function HospitalBagManager({
           <div>
             <span className="text-xs text-gray-400 font-bold block">Perlengkapan Ibu</span>
             <strong className="text-sm text-[#2F3A3A] font-extrabold">
-              {stats.groupItems["Perlengkapan Ibu"]?.comp || 0} / {stats.groupItems["Perlengkapan Ibu"]?.total || 0} Siap
+              {stats.groupItems["Moms"]?.comp || 0} / {stats.groupItems["Moms"]?.total || 0} Siap
             </strong>
             <span className="text-[10px] text-gray-400 block mt-1">Daster busui, gurita, pembalut</span>
           </div>
@@ -383,7 +383,7 @@ export default function HospitalBagManager({
           <div>
             <span className="text-xs text-gray-400 font-bold block">Dokumen & Ayah</span>
             <strong className="text-sm text-[#2F3A3A] font-extrabold">
-              {((stats.groupItems["Dokumen Penting"]?.comp || 0) + (stats.groupItems["Perlengkapan Ayah"]?.comp || 0))} / {((stats.groupItems["Dokumen Penting"]?.total || 0) + (stats.groupItems["Perlengkapan Ayah"]?.total || 0))} Siap
+              {((stats.groupItems["Dokumen"]?.comp || 0) + (stats.groupItems["Pendamping"]?.comp || 0))} / {((stats.groupItems["Dokumen"]?.total || 0) + (stats.groupItems["Pendamping"]?.total || 0))} Siap
             </strong>
             <span className="text-[10px] text-gray-400 block mt-1">KTP, KK, charger HP Dads</span>
           </div>

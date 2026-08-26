@@ -99,7 +99,7 @@ export interface HospitalBagItem {
   id: string;
   userId: string;
   barang: string;
-  kategori: string; // "Perlengkapan Bayi", "Perlengkapan Ibu", "Perlengkapan Ayah", "Dokumen Penting"
+  kategori: string; // "Bayi", "Moms", "Pendamping", "Dokumen"
   jumlah: number;
   satuan?: "pcs" | "pack";
   catatan?: string;
